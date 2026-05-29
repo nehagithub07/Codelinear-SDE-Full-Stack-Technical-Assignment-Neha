@@ -2,21 +2,26 @@ import { trustedLogos } from '../data/trustedLogos'
 
 function TrustedBy() {
   return (
-    <section className="border-y border-white/5 bg-ink-950 py-12">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
-        <p className="text-center text-sm font-medium text-mist-100/[0.55]">
-          Trusted By
+    <section className="bg-ink-950 pb-20 pt-4 sm:pb-28">
+      <div className="mx-auto max-w-[1580px] px-6 sm:px-10 lg:px-32">
+        <p className="text-[22px] font-semibold leading-none text-mist-100/[0.78] sm:text-2xl">
+          Trusted By:
         </p>
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-4 text-slate-500 sm:gap-x-8">
           {trustedLogos.map((logo) => (
             <div
-              className="flex min-h-20 items-center justify-center gap-3 rounded-lg border border-white/5 bg-white/[0.03] px-5 text-mist-100/[0.62] transition duration-200 hover:border-white/[0.12] hover:bg-white/[0.055] hover:text-mist-50"
+              className="flex items-center gap-2.5 text-slate-500/85 transition hover:text-slate-300"
               key={logo.name}
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-xs font-bold text-mist-50">
-                {logo.mark}
+              <logo.icon
+                aria-hidden="true"
+                className={logo.wide ? 'h-7 w-14' : 'h-6 w-6'}
+              />
+              <span
+                className={`font-bold ${logo.small ? 'text-sm' : 'text-lg'}`}
+              >
+                {logo.name}
               </span>
-              <span className="text-base font-semibold">{logo.name}</span>
             </div>
           ))}
         </div>

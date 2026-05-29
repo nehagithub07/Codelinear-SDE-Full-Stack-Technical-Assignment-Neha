@@ -1,41 +1,47 @@
 import {
-  BadgeDollarSign,
-  Building2,
-  CreditCard,
-  Smartphone,
-} from 'lucide-react'
+  CoreIcon,
+  DigitalIcon,
+  LoanManagementIcon,
+  LoanOriginationIcon,
+  OpenBankingIcon,
+} from '../components/SolutionIcons'
 
 export const solutions = [
   {
     title: 'Core Banking CB7',
-    tag: 'Ledger',
     description:
-      'Real-time accounts, deposits, lending, and posting rails designed for resilient banking operations.',
+      'CB7 helps your financial institution improve the client experience, automate and optimize procedures, simplify banking operations for your employees, improve risk management, increase productivity, and ensure full regulatory compliance.',
     href: '#core-banking',
-    icon: Building2,
+    icon: CoreIcon,
   },
   {
     title: 'Digital Banking N7',
-    tag: 'Mobile',
     description:
-      'Customer-facing web and mobile journeys with onboarding, self-service, payments, and account controls.',
+      'N7 brings full capabilities across strategy, human-centred design, operations, engineering and data science to create and deliver disruptive innovation. Our approach to building digital banks is specifically designed to help clients',
     href: '#digital-banking',
-    icon: Smartphone,
+    icon: DigitalIcon,
   },
   {
-    title: 'Payments Hub',
-    tag: 'Payments',
+    title: 'Open Banking',
     description:
-      'A unified payment layer for transfers, card workflows, settlement visibility, and operational monitoring.',
-    href: '#payments',
-    icon: CreditCard,
+      'Our API-based N7 helps you to gain actionable insights, enable account aggregation, enhance customer onboarding, PFM, and payment initiation, while customers can securely access and share authorized data.',
+    href: '#open-banking',
+    icon: OpenBankingIcon,
   },
   {
-    title: 'Revenue Operations',
-    tag: 'Growth',
+    title: 'Loan Origination System',
+    label: 'NBFC',
     description:
-      'Product analytics, pricing controls, and customer insights that help teams launch and iterate faster.',
-    href: '#operations',
-    icon: BadgeDollarSign,
+      'N7 brings full capabilities across strategy, human-centred design, operations, engineering and data science to create and deliver disruptive innovation. Our approach to building digital banks is specifically designed to help clients',
+    href: '#loan-origination',
+    icon: LoanOriginationIcon,
+  },
+  {
+    title: 'Loan Management System',
+    label: 'NBFC',
+    description:
+      'N7 brings full capabilities across strategy, human-centred design, operations, engineering and data science to create and deliver disruptive innovation. Our approach to building digital banks is specifically designed to help clients',
+    href: '#loan-management',
+    icon: LoanManagementIcon,
   },
 ]

@@ -4,28 +4,31 @@ function SolutionCard({ solution }) {
   const Icon = solution.icon
 
   return (
-    <article className="group flex h-full min-h-[350px] flex-col overflow-hidden rounded-lg border border-white/[0.08] bg-white/[0.035] p-6 transition duration-300 hover:-translate-y-1 hover:border-n7-cyan/[0.45] hover:bg-white/[0.055] hover:shadow-glow">
-      <div className="flex items-start justify-between gap-5">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-ink-950">
-          <Icon aria-hidden="true" size={24} strokeWidth={1.9} />
-        </div>
-        <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-semibold text-mist-100/70">
-          {solution.tag}
-        </span>
+    <article className="group relative pr-2 text-left">
+      <div className="flex h-12 items-start justify-between gap-4 sm:h-16">
+        <Icon
+          aria-hidden="true"
+          className="h-9 w-9 text-mist-50/85 sm:h-14 sm:w-14"
+        />
+        {solution.label ? (
+          <span className="mt-2 text-[10px] font-semibold uppercase text-slate-500">
+            {solution.label}
+          </span>
+        ) : null}
       </div>
 
-      <div className="mt-10">
-        <h3 className="text-2xl font-semibold leading-tight text-white">
+      <div className="mt-5 sm:mt-7">
+        <h3 className="text-base font-medium leading-tight text-mist-50 sm:text-[28px]">
           {solution.title}
         </h3>
-        <p className="mt-4 text-base leading-7 text-mist-100/[0.66]">
+        <p className="mt-6 max-w-[360px] text-xs leading-[1.55] text-mist-100/[0.72] sm:mt-12 sm:text-[20px] sm:leading-[1.35]">
           {solution.description}
         </p>
       </div>
 
-      <div className="mt-auto pt-10">
+      <div className="mt-6 sm:mt-10">
         <a
-          className="inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-mist-50 transition hover:text-n7-cyan"
+          className="inline-flex items-center gap-2 border-b border-n7-cyan pb-1 font-mono text-[10px] uppercase text-n7-cyan transition hover:gap-3 sm:text-base"
           href={solution.href}
         >
           Learn More
