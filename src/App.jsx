@@ -1,4 +1,7 @@
 import Hero from './components/Hero'
+import CoreBanking from './components/CoreBanking'
+import DigitalBanking from './components/DigitalBanking'
+import MarqueeStrip from './components/MarqueeStrip'
 import Navbar from './components/Navbar'
 import Solutions from './components/Solutions'
 import TrustedBy from './components/TrustedBy'
@@ -11,6 +14,9 @@ function App() {
         <Hero />
         <TrustedBy />
         <Solutions />
+        <CoreBanking />
+        <MarqueeStrip />
+        <DigitalBanking />
       </main>
     </>
   )
