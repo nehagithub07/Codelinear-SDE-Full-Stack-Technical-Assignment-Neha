@@ -101,18 +101,18 @@ export function PhoneMockup({ variant = 'activity', className = '' }) {
 
   return (
     <div
-      className={`relative mx-auto h-[236px] w-[118px] rounded-[24px] border-[5px] border-black bg-white p-2 text-slate-900 shadow-[0_18px_36px_rgba(0,0,0,0.24)] ${className}`}
+      className={`relative mx-auto h-[172px] w-[86px] rounded-[18px] border-[4px] border-black bg-white p-1.5 text-slate-900 shadow-[0_18px_36px_rgba(0,0,0,0.24)] sm:h-[236px] sm:w-[118px] sm:rounded-[24px] sm:border-[5px] sm:p-2 ${className}`}
     >
-      <div className="absolute left-1/2 top-0 h-3 w-12 -translate-x-1/2 rounded-b-xl bg-black" />
-      <div className="mt-5 flex items-center gap-2">
-        <div className="h-7 w-7 rounded-full bg-slate-200" />
+      <div className="absolute left-1/2 top-0 h-2 w-9 -translate-x-1/2 rounded-b-xl bg-black sm:h-3 sm:w-12" />
+      <div className="mt-4 flex items-center gap-1.5 sm:mt-5 sm:gap-2">
+        <div className="h-5 w-5 rounded-full bg-slate-200 sm:h-7 sm:w-7" />
         <div>
           <p className="text-[7px] font-bold">Toni Kross</p>
           <p className="text-[6px] text-slate-400">Good Morning</p>
         </div>
       </div>
       {variant === 'chart' ? (
-        <div className="mt-4 h-16 rounded-lg border border-slate-100 bg-slate-50 p-2">
+        <div className="mt-3 h-11 rounded-lg border border-slate-100 bg-slate-50 p-1.5 sm:mt-4 sm:h-16 sm:p-2">
           <div className="flex h-full items-end gap-1.5">
             {[42, 72, 34, 86, 54].map((height) => (
               <span
@@ -127,9 +127,9 @@ export function PhoneMockup({ variant = 'activity', className = '' }) {
       <p className="mt-3 text-[6px] text-slate-400">
         {variant === 'profile' ? 'Menu' : 'Recent activity'}
       </p>
-      <div className="mt-1 grid gap-1.5">
+      <div className="mt-1 grid gap-1 sm:gap-1.5">
         {rows.map((row, index) => (
-          <div className="flex items-center justify-between rounded bg-slate-50 px-1.5 py-1" key={row}>
+          <div className="flex items-center justify-between rounded bg-slate-50 px-1 py-0.5 sm:px-1.5 sm:py-1" key={row}>
             <span className="flex items-center gap-1 text-[6px]">
               <CheckCircle2 size={7} className="text-n7-blue" />
               {row}
@@ -138,7 +138,7 @@ export function PhoneMockup({ variant = 'activity', className = '' }) {
           </div>
         ))}
       </div>
-      <div className="absolute inset-x-3 bottom-2 flex justify-between text-[6px] text-slate-400">
+      <div className="absolute inset-x-2 bottom-1.5 flex justify-between text-[5px] text-slate-400 sm:inset-x-3 sm:bottom-2 sm:text-[6px]">
         <span>Home</span>
         <span>Cards</span>
         <span>More</span>
