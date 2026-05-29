@@ -1,6 +1,6 @@
 import { ActivityCard, BalanceCard } from './FloatingCard'
 import Button from './Button'
-import heroBanking from '../assets/hero-banking.png'
+import heroBanking from '../assets/hero-banking.jpg'
 
 function Hero() {
   return (
@@ -18,9 +18,9 @@ function Hero() {
             experience and operational excellence
           </p>
 
-          <div className="mt-14 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-14 flex flex-col gap-4 sm:flex-row" id="request-demo">
             <Button>Request Demo</Button>
-            <Button href="#contact" variant="secondary">
+            <Button href="mailto:hello@n7banking.com" variant="secondary">
               Contact Us
             </Button>
           </div>
@@ -35,7 +35,10 @@ function Hero() {
                 alt="Customer using mobile banking on a phone beside a laptop"
                 className="aspect-[1.18/1] w-full object-cover object-center"
                 decoding="async"
+                fetchPriority="high"
+                height="1024"
                 src={heroBanking}
+                width="1536"
               />
             </div>
 
