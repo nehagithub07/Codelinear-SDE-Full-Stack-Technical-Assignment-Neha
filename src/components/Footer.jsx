@@ -3,15 +3,15 @@ import { ArrowRight } from 'lucide-react'
 const addresses = [
   {
     title: 'London',
-    body: 'Linktia Infosystems Ltd - CB7, 26 Main Road Sundridge,TN14 6EP, England, United Kingdom.',
+    body: 'Linktia Infosystems Ltd – CB 7, 26 Main Road Sundridge, TN 14 6EP, England, United Kingdom.',
   },
   {
     title: 'Dubai',
-    body: 'Linktia Infosystems Ltd - CB7,Jumeirah Business, Center 5 Cluster W, Jumeirah Lakes Towers, Dubai, United Arab Emirates',
+    body: 'Linktia Infosystems Ltd – CB7, Jumeirah Business, Center 5 Cluster W, Jumeirah Lakes Towers, Dubai, United Arab Emirates',
   },
   {
     title: 'London',
-    body: 'Linktia Infosystems Ltd - CB7,Nirmal, Anand Nagar, Suncity Road, Pune, Maharashtra, 411041, India',
+    body: 'Linktia Infosystems Ltd – CB7, Nirmal, Anand Nagar, Suncity Road, Pune, Maharashtra, 411041, India',
   },
 ]
 
@@ -46,74 +46,285 @@ const linkColumns = [
   },
 ]
 
+function N7Logo() {
+  return (
+    <svg
+      className="footer-logo-svg"
+      width="400"
+      height="232"
+      viewBox="0 0 400 232"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="N7 Logo"
+    >
+      <defs>
+        <linearGradient
+          id="n7LogoGradient"
+          x1="0"
+          y1="0"
+          x2="400"
+          y2="232"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#3477ED" />
+          <stop offset="0.48" stopColor="#35BFF6" />
+          <stop offset="1" stopColor="#5CE7EF" />
+        </linearGradient>
+      </defs>
+
+      {/* Correct N */}
+      <path
+        d="M0 0H37L157 166V0H194V232H157L37 64V232H0V0Z"
+        fill="url(#n7LogoGradient)"
+      />
+
+      {/* Correct 7 - starts from right side like the reference image */}
+      <path
+        d="M236 0H400V2C400 12 397 24 392 33H355C331 58 313 88 299 122C282 162 271 200 271 232H309C309 195 318 159 333 124C348 90 368 58 392 33H236V0Z"
+        fill="url(#n7LogoGradient)"
+      />
+    </svg>
+  )
+}
+
 function FooterLink({ item }) {
   return (
-    <a
-      className="flex items-start justify-between gap-4 text-mist-100/66 transition hover:text-n7-cyan"
-      href="#home"
-    >
+    <a className="footer-link" href="#home">
       <span>{item}</span>
-      <ArrowRight className="mt-0.5 shrink-0 text-n7-cyan" size={16} />
+      <ArrowRight size={16} strokeWidth={1.4} />
     </a>
   )
 }
 
 function Footer() {
   return (
-    <footer className="bg-ink-950 px-6 pb-10 pt-12 sm:px-10" id="about">
-      <div className="mx-auto max-w-[1280px]">
-        <div className="grid items-center gap-12 py-36 lg:grid-cols-[0.58fr_0.42fr]">
-          <div>
-            <h2 className="text-balanced max-w-[640px] text-[50px] font-normal leading-[1.35] text-mist-50">
-              Take the full advantage of going paper-less now.
-            </h2>
-            <p className="mt-8 max-w-[540px] text-base leading-6 text-mist-100/65">
-              CB7 helps your financial institution improve the client
-              experience, automate and optimize procedures, simplify banking
-              operations
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-10 lg:justify-end">
-            <a
-              className="inline-flex min-h-12 min-w-[208px] items-center justify-center rounded-lg border border-white/80 px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
-              href="mailto:hello@n7banking.com"
-            >
-              Contact Us
-            </a>
-            <a
-              className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
-              href="#request-demo"
-            >
-              Request Demo
-            </a>
-          </div>
-        </div>
+    <footer className="n7-footer" id="about">
+      <style>{`
+        .n7-footer {
+          width: 100%;
+          min-height: 802px;
+          background: #010d12;
+          color: #ffffff;
+          font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          overflow: hidden;
+        }
 
-        <div className="grid gap-14 pb-16 lg:grid-cols-[0.34fr_0.66fr]">
-          <div className="bg-gradient-to-br from-[#2b66e7] via-[#2db6f1] to-[#5ce2ef] bg-clip-text text-[180px] font-bold leading-none text-transparent sm:text-[320px]">
-            N7
+        .footer-inner {
+          width: calc(100% - 144px);
+          max-width: 1245px;
+          margin: 0 auto;
+          padding-top: 156px;
+        }
+
+        .footer-main {
+          display: grid;
+          grid-template-columns: 400px 1fr;
+          column-gap: 64px;
+          align-items: start;
+        }
+
+        .footer-logo-wrap {
+          width: 400px;
+          height: 232px;
+        }
+
+        .footer-logo-svg {
+          display: block;
+          width: 400px;
+          height: 232px;
+        }
+
+        .footer-content {
+          padding-top: 2px;
+        }
+
+        .address-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 225px);
+          column-gap: 78px;
+          align-items: start;
+        }
+
+        .address-title,
+        .column-title {
+          margin: 0;
+          color: #f2f6fb;
+          font-size: 15.5px;
+          font-weight: 500;
+          line-height: 1.2;
+          letter-spacing: -0.1px;
+        }
+
+        .address-body {
+          margin: 17px 0 0;
+          color: rgba(210, 222, 230, 0.68);
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.34;
+          letter-spacing: -0.25px;
+        }
+
+        .link-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 225px);
+          column-gap: 78px;
+          margin-top: 110px;
+          align-items: start;
+        }
+
+        .link-list {
+          list-style: none;
+          padding: 0;
+          margin: 18px 0 0;
+          display: grid;
+          gap: 10px;
+        }
+
+        .footer-link {
+          width: 166px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 18px;
+          color: rgba(210, 222, 230, 0.68);
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.35;
+          letter-spacing: -0.25px;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .footer-link svg {
+          margin-top: 3px;
+          flex-shrink: 0;
+          color: #2ebdf4;
+        }
+
+        .footer-link:hover {
+          color: #2ebdf4;
+        }
+
+        .copyright {
+          margin: 84px 0 0 464px;
+          max-width: 775px;
+          color: rgba(150, 166, 178, 0.42);
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 1.35;
+          letter-spacing: -0.25px;
+        }
+
+        @media (max-width: 1200px) {
+          .footer-inner {
+            width: calc(100% - 80px);
+            padding-top: 110px;
+          }
+
+          .footer-main {
+            grid-template-columns: 340px 1fr;
+            column-gap: 50px;
+          }
+
+          .footer-logo-wrap,
+          .footer-logo-svg {
+            width: 340px;
+            height: auto;
+          }
+
+          .address-grid,
+          .link-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            column-gap: 40px;
+          }
+
+          .copyright {
+            margin-left: 390px;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .n7-footer {
+            min-height: auto;
+          }
+
+          .footer-inner {
+            width: calc(100% - 48px);
+            padding: 70px 0 36px;
+          }
+
+          .footer-main {
+            grid-template-columns: 1fr;
+            row-gap: 54px;
+          }
+
+          .footer-logo-wrap,
+          .footer-logo-svg {
+            width: 300px;
+            height: auto;
+          }
+
+          .address-grid,
+          .link-grid {
+            grid-template-columns: 1fr;
+            row-gap: 34px;
+          }
+
+          .link-grid {
+            margin-top: 56px;
+          }
+
+          .footer-link {
+            width: 100%;
+            max-width: 260px;
+          }
+
+          .copyright {
+            margin: 56px 0 0;
+            max-width: 100%;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .footer-inner {
+            width: calc(100% - 36px);
+            padding-top: 52px;
+          }
+
+          .footer-logo-wrap,
+          .footer-logo-svg {
+            width: 235px;
+          }
+
+          .address-body,
+          .footer-link {
+            font-size: 15px;
+          }
+        }
+      `}</style>
+
+      <div className="footer-inner">
+        <div className="footer-main">
+          <div className="footer-logo-wrap">
+            <N7Logo />
           </div>
-          <div>
-            <div className="grid gap-10 sm:grid-cols-3">
-              {addresses.map((address) => (
-                <div key={`${address.title}-${address.body}`}>
-                  <h3 className="text-base font-semibold text-mist-50">
-                    {address.title}
-                  </h3>
-                  <p className="mt-5 max-w-[270px] text-base leading-[1.32] text-mist-100/66">
-                    {address.body}
-                  </p>
+
+          <div className="footer-content">
+            <div className="address-grid">
+              {addresses.map((address, index) => (
+                <div key={`${address.title}-${index}`}>
+                  <h3 className="address-title">{address.title}</h3>
+                  <p className="address-body">{address.body}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-24 grid gap-10 sm:grid-cols-3">
+            <div className="link-grid">
               {linkColumns.map((column) => (
                 <div key={column.title}>
-                  <h3 className="text-base font-semibold text-mist-50">
-                    {column.title}
-                  </h3>
-                  <ul className="mt-5 grid gap-3 text-base leading-snug">
+                  <h3 className="column-title">{column.title}</h3>
+
+                  <ul className="link-list">
                     {column.items.map((item) => (
                       <li key={item}>
                         <FooterLink item={item} />
@@ -126,10 +337,9 @@ function Footer() {
           </div>
         </div>
 
-        <p className="pt-2 text-center text-xs leading-5 text-mist-100/30">
-          Copyright &copy; 2022 by Linktia Infosystems Limited - [CB7 and N7 as
-          Commercial Brand] - [Registered under the Companies Act 2006 in
-          England and Wales | Number of Incorporation 13100992]
+        <p className="copyright">
+          Copyright © 2022 by Linktia Infosystems Limited — [CB7 and N7 as Commercial Brand] — [Registered under the Companies
+          Act 2006 in England and Wales | Number of Incorporation 13100992]
         </p>
       </div>
     </footer>
