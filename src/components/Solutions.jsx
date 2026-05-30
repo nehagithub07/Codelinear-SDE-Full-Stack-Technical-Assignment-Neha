@@ -3,22 +3,22 @@ import SolutionCard from './SolutionCard'
 
 function Solutions() {
   return (
-    <section className="bg-ink-950 pb-10 lg:pb-28" id="solutions">
-      <div className="mx-auto grid max-w-[1580px] grid-cols-[0.42fr_0.58fr] gap-6 px-4 sm:px-10 lg:gap-12 lg:px-32">
-        <div className="pt-0 lg:pt-1">
-          <h2 className="max-w-[560px] text-[15px] font-normal leading-[1.2] text-mist-50 lg:text-5xl lg:leading-[1.18]">
+    <section className="bg-ink-950 pb-28 pt-0 lg:pb-36" id="solutions">
+      <div className="mx-auto grid max-w-[1296px] gap-14 px-6 sm:px-10 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16 lg:px-16 xl:px-0">
+        <div className="pt-2">
+          <h2 className="max-w-[430px] text-balanced text-[34px] font-normal leading-[1.2] text-mist-50 md:text-[38px]">
             All of our solutions are tailor-made to your needs
           </h2>
 
           <a
-            className="mt-7 inline-flex min-h-8 w-full max-w-[116px] items-center justify-center rounded-md border border-mist-50/80 px-3 font-mono text-[6px] uppercase text-mist-50 transition hover:bg-white hover:text-ink-950 lg:mt-16 lg:min-h-[62px] lg:max-w-[284px] lg:rounded-xl lg:text-lg"
+            className="mt-12 inline-flex min-h-12 w-full max-w-[226px] items-center justify-center rounded-lg border border-mist-50/85 px-6 font-mono text-sm uppercase text-mist-50 transition hover:bg-white hover:text-ink-950"
             href="#request-demo"
           >
             Request Demo
           </a>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-5 gap-y-6 lg:gap-x-28 lg:gap-y-24">
+        <div className="grid gap-x-20 gap-y-24 sm:grid-cols-2">
           {solutions.map((solution) => (
             <SolutionCard key={solution.title} solution={solution} />
           ))}

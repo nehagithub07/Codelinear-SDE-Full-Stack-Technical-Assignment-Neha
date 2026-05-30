@@ -1,37 +1,44 @@
+import { ArrowRight } from 'lucide-react'
 import PatternTile from './PatternTile'
 
 const articles = [
   {
     title: 'How to transition from a traditional to a digital bank',
-    date: 'Dec 15th, 2023',
+    date: '17/08/24',
     featured: true,
   },
   {
     title: 'How to transition from a traditional to a digital bank',
-    date: 'Dec 15th, 2023',
+    date: '17/08/24',
   },
   {
     title: 'How to transition from a traditional to a digital bank',
-    date: 'Dec 15th, 2023',
+    date: '17/08/24',
   },
 ]
 
 function ArticleCard({ article }) {
   return (
     <article
-      className={`rounded bg-white/[0.035] p-3 transition hover:-translate-y-0.5 hover:bg-white/[0.055] ${
-        article.featured ? 'grid gap-4 sm:grid-cols-[160px_1fr]' : ''
+      className={`rounded-[18px] bg-[#04191f] p-6 transition hover:-translate-y-0.5 hover:bg-[#062129] ${
+        article.featured ? 'grid gap-8 lg:grid-cols-[0.46fr_0.54fr]' : 'min-h-[316px]'
       }`}
     >
-      <PatternTile className={article.featured ? 'h-36' : 'mb-4 h-24'} />
-      <div>
-        <p className="font-mono text-[10px] uppercase text-n7-cyan">N7 In The News</p>
-        <h3 className="mt-2 text-lg font-normal leading-tight text-mist-50">
+      {article.featured ? (
+        <PatternTile className="min-h-[266px]" />
+      ) : null}
+      <div className="flex min-h-full flex-col">
+        <p className="font-mono text-xs uppercase text-n7-cyan/80">
+          Getting Started
+        </p>
+        <h3 className="mt-4 text-balanced text-[28px] font-normal leading-[1.15] text-mist-50">
           {article.title}
         </h3>
-        <p className="mt-2 text-xs text-mist-100/55">{article.date}</p>
+        <p className="mt-4 text-sm text-n7-cyan/65">
+          David Grohl <span className="ml-4">{article.date}</span>
+        </p>
         <a
-          className="mt-5 inline-flex min-h-8 w-full items-center justify-center rounded border border-mist-100/25 font-mono text-[10px] uppercase text-mist-100/75 transition hover:border-n7-cyan hover:text-n7-cyan"
+          className="mt-auto inline-flex min-h-9 w-full items-center justify-center rounded-lg border border-mist-100/45 font-mono text-xs uppercase text-mist-100/60 transition hover:border-n7-cyan hover:text-n7-cyan"
           href="#read-more"
         >
           Read More
@@ -43,28 +50,31 @@ function ArticleCard({ article }) {
 
 function Insights() {
   return (
-    <section className="bg-ink-950 px-6 py-16 sm:px-10 sm:py-24" id="resources">
-      <div className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+    <section className="bg-ink-950 px-6 py-20 sm:px-10 lg:py-24" id="resources">
+      <div className="mx-auto grid max-w-[1280px] gap-16 lg:grid-cols-[0.43fr_0.57fr]">
         <div>
-          <h2 className="max-w-[400px] text-2xl font-normal leading-tight text-mist-50 sm:text-4xl">
+          <h2 className="text-balanced max-w-[510px] text-[38px] font-normal leading-[1.16] text-mist-50">
             Get yourself up-to-speed on all the things happening in fintech
           </h2>
           <a
-            className="mt-8 inline-flex min-h-10 min-w-32 items-center justify-center rounded border border-mist-100/60 px-5 font-mono text-[10px] uppercase text-mist-50 transition hover:bg-white hover:text-ink-950"
+            className="mt-14 inline-flex min-h-12 min-w-[190px] items-center justify-center rounded-lg border border-mist-100/80 px-7 font-mono text-sm uppercase text-mist-50 transition hover:bg-white hover:text-ink-950"
             href="#case-studies"
           >
-            Explore Insights
+            Insights
           </a>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <ArticleCard article={articles[0]} />
           </div>
           {articles.slice(1).map((article, index) => (
             <ArticleCard article={article} key={`${article.title}-${index}`} />
           ))}
-          <a className="justify-self-end font-mono text-[10px] uppercase text-n7-cyan sm:col-span-2" href="#case-studies">
-            More N7 Insights -&gt;
+          <a
+            className="inline-flex items-center gap-2 justify-self-end border-b border-n7-cyan pb-1 font-mono text-sm uppercase text-n7-cyan sm:col-span-2"
+            href="#case-studies"
+          >
+            Read All Insights <ArrowRight size={16} />
           </a>
         </div>
       </div>

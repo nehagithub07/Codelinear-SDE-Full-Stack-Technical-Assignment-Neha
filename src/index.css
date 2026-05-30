@@ -26,9 +26,7 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 78% 20%, rgba(0, 81, 170, 0.38), transparent 28%),
-    #020b0e;
+  background: #020b0e;
 }
 
 button,
@@ -45,5 +43,21 @@ a {
   :focus-visible {
     outline: 2px solid #0faeef;
     outline-offset: 4px;
+  }
+}
+
+@layer utilities {
+  .n7-outline-dark {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(15, 174, 239, 0.2);
+  }
+
+  .n7-outline-light {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 83, 241, 0.22);
+  }
+
+  .text-balanced {
+    text-wrap: balance;
   }
 }

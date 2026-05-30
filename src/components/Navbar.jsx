@@ -12,7 +12,7 @@ function Logo() {
   return (
     <a
       aria-label="N7 home"
-      className="flex h-10 items-center rounded-lg px-3 text-2xl font-semibold text-white transition hover:bg-white/5"
+      className="flex h-9 items-center rounded-lg px-1 text-[24px] font-medium leading-none text-white transition hover:bg-white/5"
       href="#home"
     >
       N7
@@ -23,7 +23,7 @@ function Logo() {
 function NavLink({ item, onClick }) {
   return (
     <a
-      className="group inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-mist-50/90 transition hover:bg-white/5 hover:text-white"
+      className="group inline-flex items-center gap-1 rounded-lg px-2 py-2 font-mono text-[11px] font-medium uppercase text-mist-50/95 transition hover:bg-white/5 hover:text-white"
       href={item.href}
       onClick={onClick}
     >
@@ -43,10 +43,10 @@ function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 sm:px-6">
       <nav
         aria-label="Primary navigation"
-        className="mx-auto max-w-[940px] rounded-b-[20px] rounded-t-none border border-white/10 bg-white/[0.13] px-3 py-2 shadow-nav backdrop-blur-xl sm:rounded-[18px] sm:px-4"
+        className="mx-auto max-w-[716px] rounded-[11px] border border-white/10 bg-[#2b3030]/90 px-3 py-1.5 shadow-nav backdrop-blur-xl sm:px-3.5"
       >
         <div className="flex items-center justify-between gap-4">
           <Logo />
@@ -58,7 +58,7 @@ function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="min-h-10 min-w-[178px] rounded-lg px-7 py-2" variant="nav">
+            <Button className="min-h-[27px] min-w-[160px] rounded px-5 py-1 text-[11px]" variant="nav">
               Request Demo
             </Button>
           </div>

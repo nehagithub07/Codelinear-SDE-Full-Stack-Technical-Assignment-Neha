@@ -24,7 +24,7 @@ export const solutions = [
   {
     title: 'Open Banking',
     description:
-      'Our API-based N7 helps you to gain actionable insights, enable account aggregation, enhance customer onboarding, PFM, and payment initiation, while customers can securely access and share authorized data.',
+      'Our API banking helps you to gain actionable insights, enable account aggregation, streamline customer onboarding, KYC, and payment initiation, offer predictive budgeting tools, and introduce enhanced credit scoring.',
     href: '#open-banking',
     icon: OpenBankingIcon,
   },
