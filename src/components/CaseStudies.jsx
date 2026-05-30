@@ -28,7 +28,7 @@ function CaseStudies() {
                 Zoomerr
               </div>
               <a
-                className="mt-12 inline-flex min-h-9 w-full items-center justify-center rounded-lg border border-mist-100/45 font-mono text-xs uppercase text-mist-100/60 transition hover:border-n7-cyan hover:text-n7-cyan"
+                className="mt-12 inline-flex min-h-9 w-full items-center justify-center rounded-lg border border-mist-100/45 font-mono text-xs uppercase text-mist-100/60 transition hover:bg-white hover:text-black"
                 href="#read-more"
               >
                 Read More

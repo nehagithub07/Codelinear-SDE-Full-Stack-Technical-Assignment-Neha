@@ -75,13 +75,13 @@ function Footer() {
           </div>
           <div className="flex flex-wrap gap-10 lg:justify-end">
             <a
-              className="inline-flex min-h-12 min-w-[208px] items-center justify-center rounded-lg border border-white/80 px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-ink-950"
+              className="inline-flex min-h-12 min-w-[208px] items-center justify-center rounded-lg border border-white/80 px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
               href="mailto:hello@n7banking.com"
             >
               Contact Us
             </a>
             <a
-              className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:brightness-110"
+              className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
               href="#request-demo"
             >
               Request Demo

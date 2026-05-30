@@ -38,7 +38,7 @@ function ArticleCard({ article }) {
           David Grohl <span className="ml-4">{article.date}</span>
         </p>
         <a
-          className="mt-auto inline-flex min-h-9 w-full items-center justify-center rounded-lg border border-mist-100/45 font-mono text-xs uppercase text-mist-100/60 transition hover:border-n7-cyan hover:text-n7-cyan"
+          className="inline-flex min-h-9 w-full items-center justify-center rounded-lg border border-mist-100/45 font-mono text-xs uppercase text-mist-100/60 transition hover:bg-white hover:text-black"
           href="#read-more"
         >
           Read More
@@ -57,7 +57,7 @@ function Insights() {
             Get yourself up-to-speed on all the things happening in fintech
           </h2>
           <a
-            className="mt-14 inline-flex min-h-12 min-w-[190px] items-center justify-center rounded-lg border border-mist-100/80 px-7 font-mono text-sm uppercase text-mist-50 transition hover:bg-white hover:text-ink-950"
+            className="mt-14 inline-flex min-h-12 min-w-[190px] items-center justify-center rounded-lg border border-mist-100/80 px-7 font-mono text-sm uppercase text-mist-50 transition hover:bg-white hover:text-black"
             href="#case-studies"
           >
             Insights

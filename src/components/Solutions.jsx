@@ -11,7 +11,7 @@ function Solutions() {
           </h2>
 
           <a
-            className="mt-12 inline-flex min-h-12 w-full max-w-[226px] items-center justify-center rounded-lg border border-mist-50/85 px-6 font-mono text-sm uppercase text-mist-50 transition hover:bg-white hover:text-ink-950"
+            className="mt-12 inline-flex min-h-12 w-full max-w-[226px] items-center justify-center rounded-lg border border-mist-50/85 px-6 font-mono text-sm uppercase text-mist-50 transition hover:bg-white hover:text-black"
             href="#request-demo"
           >
             Request Demo

@@ -42,7 +42,7 @@ function CoreBanking() {
               </p>
               <div className="mt-8 flex flex-col items-start gap-4">
                 <a
-                  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:brightness-110"
+                  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
                   href="#request-demo"
                 >
                   Request Demo
