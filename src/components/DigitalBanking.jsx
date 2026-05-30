@@ -1,4 +1,3 @@
-import { CheckCircle2 } from 'lucide-react'
 import CtaPanel from './CtaPanel'
 import { PhoneMockup } from './Mockups'
 
@@ -32,18 +31,25 @@ const groups = [
   },
 ]
 
-function FeatureText({ group }) {
+function FeatureText({ group, className = '' }) {
   return (
-    <div className="max-w-[390px]">
-      <h3 className="text-base font-semibold text-ink-950">{group.title}</h3>
-      <p className="mt-7 text-base leading-[1.35] text-slate-700">
+    <div className={`w-full max-w-[345px] min-w-0 ${className}`}>
+      <h3 className="text-[15px] font-extrabold leading-snug text-ink-950">
+        {group.title}
+      </h3>
+
+      <p className="mt-6 text-[15px] leading-[1.45] text-slate-700">
         {group.body}
       </p>
-      <div className="mt-9 grid gap-5">
+
+      <div className="mt-8 grid gap-4">
         {group.items.map((item) => (
-          <div className="flex gap-3 text-base leading-snug text-slate-700" key={item}>
-            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 fill-n7-blue text-white" />
-            <span>{item}</span>
+          <div
+            key={item}
+            className="flex min-w-0 items-start gap-3 text-[14px] leading-snug text-slate-700"
+          >
+            <span className="mt-[5px] h-[10px] w-[10px] flex-none rounded-full bg-[#3367E8]" />
+            <span className="min-w-0 break-words">{item}</span>
           </div>
         ))}
       </div>
@@ -55,62 +61,89 @@ function DigitalBanking() {
   return (
     <>
       <section
-        className="relative overflow-hidden bg-[#EAF6FA] px-6 py-28 text-ink-950 sm:px-10 lg:py-[112px]"
         id="digital-banking"
+        className="relative overflow-hidden bg-[#EAF6FA] px-6 py-16 text-ink-950 sm:px-10 lg:px-0 lg:py-0"
       >
-        <span className="n7-outline-light pointer-events-none absolute left-[20%] top-14 hidden text-[540px] font-semibold leading-none lg:block">
+        {/* Background outline N7 */}
+        <span className="n7-outline-light pointer-events-none absolute left-[13%] top-[-65px] hidden text-[520px] font-semibold leading-none lg:block">
           N7
         </span>
-        <span className="n7-outline-light pointer-events-none absolute -left-[160px] top-[430px] text-[520px] font-semibold leading-none">
+
+        <span className="n7-outline-light pointer-events-none absolute -left-[340px] top-[350px] hidden text-[820px] font-semibold leading-none lg:block">
           7
         </span>
-        <div className="relative z-10 mx-auto max-w-[1296px]">
-          <div className="grid items-start gap-14 lg:grid-cols-[0.38fr_0.32fr_0.3fr]">
-            <div className="pt-0 lg:pt-20">
-              <h2 className="text-balanced max-w-[370px] text-[46px] font-normal leading-[1.36]">
-                Digital banking out-of-the-box
-              </h2>
-              <p className="mt-5 max-w-[380px] text-base leading-6 text-slate-700">
-                N7 helps your financial institution improve the client
-                experience, automate and optimize procedures
-              </p>
-              <div className="mt-10 flex flex-col items-start gap-5">
-                <a
-                  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white"
-                  href="#request-demo"
-                >
-                  Request Demo
-                </a>
-                <a
-                  className="inline-flex items-center gap-2 border-b border-n7-blue pb-1 font-mono text-sm uppercase text-n7-blue"
-                  href="#digital-details"
-                >
-                  Learn More -&gt;
-                </a>
-              </div>
+
+        <span className="n7-outline-light pointer-events-none absolute right-[-320px] bottom-[-260px] hidden text-[760px] font-semibold leading-none lg:block">
+          7
+        </span>
+
+        <div className="relative z-10 mx-auto w-full max-w-[1280px] lg:h-[1280px]">
+          {/* Hero text */}
+          <div className="lg:absolute lg:left-[20px] lg:top-[70px]">
+            <h2 className="max-w-[410px] text-[42px] font-normal leading-[1.05] tracking-tight text-ink-950 sm:text-[52px]">
+              Digital banking out-of-the-box
+            </h2>
+
+            <p className="mt-6 max-w-[390px] text-[15px] leading-6 text-slate-700">
+              N7 helps your financial institution improve the client experience,
+              automate and optimize procedures
+            </p>
+
+            <div className="mt-9 flex flex-col items-start gap-5">
+              <a
+                href="#request-demo"
+                className="inline-flex h-[46px] min-w-[210px] items-center justify-center rounded-[6px] bg-button-blue px-8 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition hover:opacity-90"
+              >
+                Request Demo
+              </a>
+
+              <a
+                href="#digital-details"
+                className="inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-wide text-n7-blue"
+              >
+                Learn More -&gt;
+              </a>
             </div>
+          </div>
+
+          {/* Top phone */}
+          <div className="mt-16 flex justify-center lg:absolute lg:left-[455px] lg:top-[35px] lg:mt-0">
             <PhoneMockup />
-            <div className="pt-0 lg:pt-36">
-              <FeatureText group={groups[0]} />
-            </div>
           </div>
 
+          {/* Top right text */}
+          <FeatureText
+            group={groups[0]}
+            className="mt-14 lg:absolute lg:left-[805px] lg:top-[135px] lg:mt-0"
+          />
+
+          {/* Middle text */}
+          <FeatureText
+            group={groups[1]}
+            className="mt-24 lg:absolute lg:left-[455px] lg:top-[590px] lg:mt-0"
+          />
+
+          {/* Chart phone */}
           <div
-            className="mt-24 grid items-center gap-14 lg:grid-cols-[0.42fr_0.28fr_0.3fr]"
             id="digital-details"
+            className="mt-16 flex justify-center lg:absolute lg:left-[845px] lg:top-[455px] lg:mt-0"
           >
-            <div className="hidden lg:block" />
-            <FeatureText group={groups[1]} />
-            <PhoneMockup className="justify-self-center" variant="chart" />
+            <PhoneMockup variant="chart" />
           </div>
 
-          <div className="mt-24 grid items-center gap-14 lg:grid-cols-[0.42fr_0.28fr_0.3fr]">
-            <div className="hidden lg:block" />
-            <PhoneMockup className="justify-self-center" variant="profile" />
-            <FeatureText group={groups[2]} />
+          {/* Bottom profile phone */}
+          <div className="mt-24 flex justify-center lg:absolute lg:left-[455px] lg:top-[900px] lg:mt-0">
+            <PhoneMockup variant="profile" />
           </div>
+
+          {/* Bottom right text */}
+          <FeatureText
+            group={groups[2]}
+            className="mt-14 lg:absolute lg:left-[805px] lg:top-[1010px] lg:mt-0"
+          />
         </div>
       </section>
+
       <CtaPanel light />
     </>
   )

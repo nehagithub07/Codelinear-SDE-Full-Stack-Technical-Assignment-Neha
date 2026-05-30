@@ -2,11 +2,11 @@ import { ArrowRight } from 'lucide-react'
 
 const variantClasses = {
   primary:
-    'bg-button-blue text-white shadow-[0_18px_45px_rgba(0,83,241,0.24)] hover:bg-white hover:text-black active:scale-[0.98]',
+    'bg-button-blue text-white shadow-[0_18px_45px_rgba(0,83,241,0.24)] hover:brightness-110 active:scale-[0.98]',
   secondary:
-    'border border-mist-50/80 bg-transparent text-mist-50 hover:border-white hover:bg-white hover:text-black active:scale-[0.98]',
+    'border border-mist-50/80 bg-transparent text-mist-50 hover:border-white hover:bg-white/[0.08] active:scale-[0.98]',
   nav:
-    'border border-white/75 bg-white/0 text-white hover:bg-white hover:text-black active:scale-[0.98]',
+    'border border-white/75 bg-white/0 text-white hover:bg-white hover:text-ink-950 active:scale-[0.98]',
 }
 
 function Button({

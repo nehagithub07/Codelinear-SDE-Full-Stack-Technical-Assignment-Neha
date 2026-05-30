@@ -2,12 +2,15 @@ import { CheckCircle2 } from 'lucide-react'
 import CtaPanel from './CtaPanel'
 import { DashboardMockup, DesktopMockup } from './Mockups'
 
-const features = [
+const featuresLeft = [
   'Customer-On Boarding',
   'Managing deposits and withdrawals',
   'Transaction management',
   'Interest Calculation',
   'Payments processing (cash, cheques, mandates, NEFT, RTGS etc)',
+]
+
+const featuresRight = [
   'CRM Activities',
   'Configuring New Banking Products',
   'Loan disbursal and Loan management',
@@ -16,9 +19,32 @@ const features = [
 
 function FeatureItem({ feature }) {
   return (
-    <div className="flex gap-3 text-base leading-snug text-mist-100/78">
-      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 fill-n7-blue text-white" />
-      <span>{feature}</span>
+    <div className="flex min-w-0 items-start gap-2.5 text-[13px] leading-[1.35] text-mist-100/75">
+      <CheckCircle2 className="mt-[2px] h-[15px] w-[15px] flex-none fill-n7-blue text-white" />
+      <span className="min-w-0 break-words">{feature}</span>
+    </div>
+  )
+}
+
+function MockupGlowFrame({
+  children,
+  className = '',
+  bottomLineClassName = '',
+}) {
+  return (
+    <div className={`relative inline-block overflow-visible ${className}`}>
+      {/* blue frame around the mockup */}
+      <div className="pointer-events-none absolute -left-[2px] -right-[2px] -top-[2px] bottom-[-28px] z-20 rounded-t-[10px] rounded-br-[10px] border border-[#238cff]/95 shadow-[0_0_18px_rgba(35,140,255,0.35)]" />
+
+      {/* actual mockup */}
+      <div className="relative z-10 overflow-hidden rounded-t-[9px]">
+        {children}
+      </div>
+
+      {/* extended bottom blue line */}
+      <div
+        className={`pointer-events-none absolute bottom-[-28px] z-30 h-[28px] border-b border-r border-[#238cff]/95 shadow-[0_0_16px_rgba(35,140,255,0.6)] ${bottomLineClassName}`}
+      />
     </div>
   )
 }
@@ -26,66 +52,106 @@ function FeatureItem({ feature }) {
 function CoreBanking() {
   return (
     <>
-      <section className="relative overflow-hidden bg-ink-950" id="core-banking">
-        <div className="relative min-h-[720px] border-t border-slate-500/50 py-28">
-          <span className="n7-outline-dark pointer-events-none absolute -left-14 top-16 text-[450px] font-semibold leading-none lg:left-[-20px] lg:text-[560px]">
+      <section
+        id="core-banking"
+        className="relative min-h-[846px] overflow-hidden bg-ink-950"
+      >
+        {/* TOP HERO */}
+        <div className="relative h-[432px] overflow-visible">
+          {/* CB7 outline */}
+          <span className="n7-outline-dark pointer-events-none absolute -left-[72px] top-[74px] text-[360px] font-semibold leading-none opacity-70 sm:text-[430px] lg:-left-[42px] lg:top-[78px] lg:text-[455px]">
             CB7
           </span>
-          <div className="relative z-10 mx-auto grid max-w-[1296px] gap-14 px-6 sm:px-10 lg:grid-cols-[0.55fr_0.45fr] lg:px-16 xl:px-0">
-            <div className="max-w-[540px] pt-0 lg:pt-4">
-              <h2 className="text-balanced text-[42px] font-normal leading-[1.22] text-mist-50 sm:text-[52px]">
+
+          <div className="relative mx-auto h-full max-w-[1296px] px-6 sm:px-10 lg:px-[58px] xl:px-0">
+            {/* left text */}
+            <div className="relative z-30 pt-[98px]">
+              <h2 className="max-w-[430px] text-[36px] font-normal leading-[1.18] tracking-[-0.03em] text-mist-50 sm:text-[40px]">
                 A complete cloud-based core banking.
               </h2>
-              <p className="mt-6 max-w-[410px] text-base leading-6 text-mist-100/72">
+
+              <p className="mt-4 max-w-[320px] text-[13px] leading-[1.35] text-mist-100/70">
                 Faster time to market with our cloud-based core banking
                 services
               </p>
-              <div className="mt-8 flex flex-col items-start gap-4">
+
+              <div className="mt-7 flex flex-col items-start gap-4">
                 <a
-                  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
                   href="#request-demo"
+                  className="inline-flex h-[34px] min-w-[148px] items-center justify-center rounded-md bg-button-blue px-6 font-mono text-[10px] font-semibold uppercase text-white transition hover:bg-white hover:text-black"
                 >
                   Request Demo
                 </a>
+
                 <a
-                  className="inline-flex items-center gap-2 border-b border-n7-cyan pb-1 font-mono text-sm uppercase text-n7-cyan"
                   href="#core-details"
+                  className="inline-flex items-center gap-2 border-b border-n7-cyan pb-1 font-mono text-[10px] font-semibold uppercase text-n7-cyan"
                 >
-                  Learn More -&gt;
+                  Learn More <span aria-hidden="true">-&gt;</span>
                 </a>
               </div>
             </div>
-            <div className="relative min-h-[360px] lg:min-h-0">
-              <div className="mx-auto w-[min(590px,calc(100vw-48px))] lg:absolute lg:right-0 lg:top-0">
+
+            {/* top-right dashboard */}
+            <div className="pointer-events-none absolute right-[-265px] top-[40px] z-20 hidden origin-top-right scale-[0.62] transform-gpu lg:block xl:right-[-230px]">
+              <MockupGlowFrame bottomLineClassName="-left-[42px] w-[calc(100%+300px)] rounded-br-[10px]">
                 <DashboardMockup />
+              </MockupGlowFrame>
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM DETAILS */}
+        <div
+          id="core-details"
+          className="relative mx-auto h-[414px] max-w-[1296px] px-6 sm:px-10 lg:px-[58px] xl:px-0"
+        >
+          {/* bottom-left KYC mockup */}
+          <div className="pointer-events-none absolute left-[-210px] top-[61px] z-20 hidden origin-top-left scale-[0.58] transform-gpu lg:block xl:left-[-210px]">
+            <MockupGlowFrame bottomLineClassName="left-0 w-[calc(100%+245px)] rounded-br-[10px]">
+              <DesktopMockup />
+            </MockupGlowFrame>
+          </div>
+
+          {/* right content */}
+          <div className="relative z-30 ml-auto max-w-[475px] pt-[98px] lg:mr-[35px]">
+            <h3 className="max-w-[475px] text-[22px] font-normal leading-[1.25] tracking-[-0.02em] text-mist-50 sm:text-[24px]">
+              Run a more efficient, flexible,and digitally connected
+              corebanking system
+            </h3>
+
+            <p className="mt-7 text-[13px] font-semibold text-mist-50">
+              What you will get:
+            </p>
+
+            <div className="mt-4 grid min-w-0 grid-cols-2 gap-x-10 gap-y-3">
+              <div className="grid gap-y-3">
+                {featuresLeft.map((feature) => (
+                  <FeatureItem feature={feature} key={feature} />
+                ))}
+              </div>
+
+              <div className="grid gap-y-3">
+                {featuresRight.map((feature) => (
+                  <FeatureItem feature={feature} key={feature} />
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div
-          className="mx-auto grid max-w-[1296px] items-center gap-16 px-6 pb-36 pt-20 sm:px-10 lg:grid-cols-[0.54fr_0.46fr] lg:px-16 xl:px-0"
-          id="core-details"
-        >
-          <div className="justify-self-center lg:justify-self-start lg:ml-0">
+        {/* MOBILE/TABLET */}
+        <div className="relative z-30 mx-auto block max-w-[680px] space-y-12 px-6 pb-16 sm:px-10 lg:hidden">
+          <MockupGlowFrame bottomLineClassName="-left-[24px] w-[calc(100%+80px)] rounded-br-[10px]">
+            <DashboardMockup />
+          </MockupGlowFrame>
+
+          <MockupGlowFrame bottomLineClassName="left-0 w-[calc(100%+80px)] rounded-br-[10px]">
             <DesktopMockup />
-          </div>
-          <div className="max-w-[600px]">
-            <h3 className="text-balanced text-[28px] font-normal leading-[1.24] text-mist-50 sm:text-[30px]">
-              Run a more efficient, flexible,and digitally connected
-              corebanking system
-            </h3>
-            <p className="mt-8 text-base font-semibold text-mist-50">
-              What you will get:
-            </p>
-            <div className="mt-5 grid gap-x-10 gap-y-4 sm:grid-cols-2">
-              {features.map((feature) => (
-                <FeatureItem feature={feature} key={feature} />
-              ))}
-            </div>
-          </div>
+          </MockupGlowFrame>
         </div>
       </section>
+
       <CtaPanel />
     </>
   )

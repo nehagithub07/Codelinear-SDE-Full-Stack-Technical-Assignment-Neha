@@ -19,7 +19,9 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 sm:mt-14 sm:gap-5" id="request-demo">
-            <Button className="min-w-[210px] rounded-lg">Request Demo</Button>
+            <Button className="min-w-[210px] rounded-lg" variant="primary">
+              Request Demo
+            </Button>
             <Button className="min-w-[210px] rounded-lg" href="mailto:hello@n7banking.com" variant="secondary">
               Contact Us
             </Button>
