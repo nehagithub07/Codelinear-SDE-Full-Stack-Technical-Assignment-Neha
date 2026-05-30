@@ -33,12 +33,12 @@ function CtaPanel({
             >
               Contact Us
             </a>
-            <a
-              className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm uppercase text-white transition hover:bg-white hover:text-black"
-              href="#request-demo"
-            >
-              Request Demo
-            </a>
+           <a
+  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm font-medium uppercase tracking-normal text-white transition-all duration-200 ease-out hover:!bg-none hover:!bg-white hover:!text-ink-950 active:scale-[0.98]"
+  href="#request-demo"
+>
+  Request Demo
+</a>
           </div>
         </div>
       </div>

@@ -367,12 +367,13 @@ export default function CoreBanking() {
             Faster time to market with our cloud-based core banking services
           </p>
           <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 18 }}>
-            <a
-                 href="#request-demo"
-               className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm font-bold uppercase tracking-[0.12em] text-white no-underline shadow-[0_0_24px_rgba(29,78,216,0.5)] transition hover:bg-white hover:text-black"
+          <a
+  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm font-medium uppercase tracking-normal text-white transition-all duration-200 ease-out hover:!bg-none hover:!bg-white hover:!text-ink-950 active:scale-[0.98]"
+  href="#request-demo"
 >
   Request Demo
 </a>
+           
             <a href="#core-details" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               borderBottom: '1px solid #22d3ee', paddingBottom: 4,

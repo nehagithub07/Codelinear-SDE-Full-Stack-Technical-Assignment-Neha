@@ -90,12 +90,12 @@ function DigitalBanking() {
             </p>
 
             <div className="mt-9 flex flex-col items-start gap-5">
-              <a
-                href="#request-demo"
-                className="inline-flex h-[46px] min-w-[210px] items-center justify-center rounded-[6px] bg-button-blue px-8 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition hover:opacity-90"
-              >
-                Request Demo
-              </a>
+             <a
+  className="inline-flex min-h-12 min-w-[210px] items-center justify-center rounded-lg bg-button-blue px-8 font-mono text-sm font-medium uppercase tracking-normal text-white transition-all duration-200 ease-out hover:!bg-none hover:!bg-white hover:!text-ink-950 active:scale-[0.98]"
+  href="#request-demo"
+>
+  Request Demo
+</a>
 
               <a
                 href="#digital-details"
