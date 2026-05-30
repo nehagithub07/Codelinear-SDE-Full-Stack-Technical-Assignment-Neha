@@ -126,7 +126,7 @@ function TableRows() {
 
 export function DashboardMockup({ className = '' }) {
   return (
-    <WindowFrame className={`w-[590px] max-w-none ${className}`}>
+    <WindowFrame className={`w-[min(590px,calc(100vw-48px))] max-w-none ${className}`}>
       <div className="grid grid-cols-[1fr_0.55fr] gap-3">
         <Metric value="450" label="Total STR (Suspicious Transaction Report)" />
         <Metric value="3" label="Days Pending for AML Process" tone="gold" />
@@ -164,7 +164,7 @@ function KycRows() {
 
 export function DesktopMockup() {
   return (
-    <WindowFrame className="w-[620px] max-w-none" title="KYC Dashboard">
+    <WindowFrame className="w-[min(620px,calc(100vw-48px))] max-w-none" title="KYC Dashboard">
       <div className="grid grid-cols-4 gap-3">
         <Metric value="115" label="New Customer" tone="green" />
         <Metric value="940" label="In Progress" tone="gold" />
@@ -356,7 +356,7 @@ function ProfilePhone() {
               </span>
               {label}
             </span>
-            <span className="text-xl leading-none">›</span>
+            <span className="text-xl leading-none">&gt;</span>
           </div>
         ))}
       </div>

@@ -56,7 +56,7 @@ function CoreBanking() {
               </div>
             </div>
             <div className="relative min-h-[360px] lg:min-h-0">
-              <div className="mx-auto w-[590px] max-w-[calc(100vw-48px)] lg:absolute lg:left-28 lg:top-0 lg:max-w-none">
+              <div className="mx-auto w-[min(590px,calc(100vw-48px))] lg:absolute lg:right-0 lg:top-0">
                 <DashboardMockup />
               </div>
             </div>
@@ -67,7 +67,7 @@ function CoreBanking() {
           className="mx-auto grid max-w-[1296px] items-center gap-16 px-6 pb-36 pt-20 sm:px-10 lg:grid-cols-[0.54fr_0.46fr] lg:px-16 xl:px-0"
           id="core-details"
         >
-          <div className="justify-self-center lg:justify-self-start lg:-ml-[260px]">
+          <div className="justify-self-center lg:justify-self-start lg:ml-0">
             <DesktopMockup />
           </div>
           <div className="max-w-[600px]">

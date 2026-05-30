@@ -47,6 +47,15 @@ a {
 }
 
 @layer utilities {
+  .n7-marquee-track {
+    animation: n7-marquee 28s linear infinite;
+  }
+
+  .n7-wave-hand {
+    animation: n7-wave 1.35s ease-in-out infinite;
+    transform-origin: 70% 70%;
+  }
+
   .n7-outline-dark {
     color: transparent;
     -webkit-text-stroke: 1px rgba(15, 174, 239, 0.2);
@@ -59,5 +68,38 @@ a {
 
   .text-balanced {
     text-wrap: balance;
+  }
+}
+
+@keyframes n7-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes n7-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(16deg);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    transform: rotate(12deg);
+  }
+
+  80% {
+    transform: rotate(-6deg);
   }
 }

@@ -43,10 +43,10 @@ function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 pt-5 sm:px-6">
+    <header className="fixed left-1/2 top-0 z-50 w-full max-w-[764px] -translate-x-1/2 px-4 pt-5 sm:px-6">
       <nav
         aria-label="Primary navigation"
-        className="mx-auto max-w-[716px] rounded-[11px] border border-white/10 bg-[#2b3030]/90 px-3 py-1.5 shadow-nav backdrop-blur-xl sm:px-3.5"
+        className="mx-auto w-full max-w-[716px] rounded-[11px] border border-white/10 bg-[#2b3030]/90 px-3 py-1.5 shadow-nav backdrop-blur-xl sm:px-3.5"
       >
         <div className="flex items-center justify-between gap-4">
           <Logo />
